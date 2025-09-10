@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChatBuddy</title>
+</head>
+<body>
+
+  <h2>ChatBuddy - Mock Interview</h2>
+
+  <div id="chat"></div>
+
+  <input type="text" id="msg" placeholder="Type your answer">
+  <button onclick="sendMsg()">Send</button>
+
+  <script>
+    function sendMsg() {
+      let chat = document.getElementById("chat");
+      let input = document.getElementById("msg");
+      let text = input.value;
+
+      if (text.trim() === "") return;
+
+      // show user message
+      chat.innerHTML += "<p><b>You:</b> " + text + "</p>";
+
+      // bot reply
+      chat.innerHTML += "<p><b>Bot:</b> Thank you for your answer. Try to explain with Situation, Task, Action, and Result (STAR method).</p>";
+
+      // clear input
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>
